@@ -76,7 +76,7 @@ class CallTrackingReceiver : PhoneCallReceiver() {
     }
 }
 ```
-### Step 2: Start Call Tracking
+### Step 3: Start Call Tracking
 Create an instance of CallTracker, set the PhoneCallReceiver you created in step 1, and start call tracking.
 
 
@@ -91,7 +91,7 @@ Create an instance of CallTracker, set the PhoneCallReceiver you created in step
 ```
     callsTracker.startCallTrackingService(this)
 ```
-### Step 3: Stop Call Tracking Receiver
+### Step 4: Stop Call Tracking Receiver
 To stop the call tracking receiver, call the following method:
 
 
