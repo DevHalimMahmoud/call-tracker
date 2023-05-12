@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/abdomi7/call-tracker.svg)](https://jitpack.io/#abdomi7/call-tracker)
+
 # Call Tracker
 
 Call Tracker is an Android library that provides an easy way to track phone calls on Android devices.
@@ -14,8 +16,6 @@ Call Tracker offers the ability to handle different call events, including:
 
 When any of these events occur, the corresponding method is called and contains information about the call such as the phone number, start time, and end time.
 
-
-
 ## Permissions required
 ```
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -25,7 +25,16 @@ When any of these events occur, the corresponding method is called and contains 
 
 ## Usage
 
-### Step 1: Extend PhoneCallReceiver
+### Step 1: Add the library dependency
+Add the following dependency to your app's build.gradle file:
+
+```
+dependencies {
+    implementation 'com.github.abdomi7:call-tracker:1.0.3'
+}
+```
+
+### Step 2: Extend PhoneCallReceiver
 Extend the PhoneCallReceiver class and implement the methods provided for each call event you want to track.
 
 
@@ -95,4 +104,5 @@ This stops the phone call receiver and ensures that your app does not continue t
 
 ## Conclusion
 Call Tracker is a handy tool for Android developers who need to track phone calls in their apps. By following these simple steps, you can add call-tracking functionality to your app quickly and easily.
+
 
