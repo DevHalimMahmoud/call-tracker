@@ -25,7 +25,18 @@ When any of these events occur, the corresponding method is called and contains 
 
 ## Usage
 
-### Step 1: Add the library dependency
+### Step 1. Add the JitPack repository to your build file
+
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+### Step 2: Add the library dependency
 Add the following dependency to your app's build.gradle file:
 
 ```
@@ -34,7 +45,7 @@ dependencies {
 }
 ```
 
-### Step 2: Extend PhoneCallReceiver
+### Step 3: Extend PhoneCallReceiver
 Extend the PhoneCallReceiver class and implement the methods provided for each call event you want to track.
 
 
@@ -76,7 +87,7 @@ class CallTrackingReceiver : PhoneCallReceiver() {
     }
 }
 ```
-### Step 3: Start Call Tracking
+### Step 4: Start Call Tracking
 Create an instance of CallTracker, set the PhoneCallReceiver you created in step 1, and start call tracking.
 
 
@@ -91,7 +102,7 @@ Create an instance of CallTracker, set the PhoneCallReceiver you created in step
 ```
     callsTracker.startCallTrackingService(this)
 ```
-### Step 4: Stop Call Tracking Receiver
+### Step 5: Stop Call Tracking Receiver
 To stop the call tracking receiver, call the following method:
 
 
