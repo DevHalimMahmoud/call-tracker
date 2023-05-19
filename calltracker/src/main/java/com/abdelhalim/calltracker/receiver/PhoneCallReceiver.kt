@@ -44,7 +44,8 @@ open class PhoneCallReceiver : BroadcastReceiver() {
                             cursor?.use {
                                 if (it.moveToFirst()) {
                                     Log.e("READ_CALL_LOG", "READ_CALL_LOG permission granted")
-                                    number = it.getString(it.getColumnIndex(CallLog.Calls.NUMBER))
+                                    val numberIndex = it.getColumnIndex(CallLog.Calls.NUMBER)
+                                    number = it.getString(numberIndex)
                                 }
                             }
                         } catch (e: Exception) {
