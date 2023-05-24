@@ -17,7 +17,7 @@ Call Tracker offers the ability to handle different call events, including:
 When any of these events occur, the corresponding method is called and contains information about the call such as the phone number, start time, and end time.
 
 ## Permissions required
-```
+```xml
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
@@ -27,7 +27,7 @@ When any of these events occur, the corresponding method is called and contains 
 
 ### Step 1. Add the JitPack repository to your build file
 
-```
+```gradle
 	allprojects {
 		repositories {
 			...
@@ -39,7 +39,7 @@ When any of these events occur, the corresponding method is called and contains 
 ### Step 2: Add the library dependency
 Add the following dependency to your app's build.gradle file:
 
-```
+```gradle
 dependencies {
     implementation 'com.github.abdomi7:call-tracker:1.0.3'
 }
@@ -49,7 +49,7 @@ dependencies {
 Extend the PhoneCallReceiver class and implement the methods provided for each call event you want to track.
 
 
-```
+```kotlin
 class CallTrackingReceiver : PhoneCallReceiver() {
 
     override fun onIncomingCallReceived(context: Context, number: String?, start: Date) {
@@ -91,7 +91,7 @@ class CallTrackingReceiver : PhoneCallReceiver() {
 Create an instance of CallTracker, set the PhoneCallReceiver you created in step 1, and start call tracking.
 
 
-```
+```kotlin
     val callsTracker = CallTracker.getInstance()
     callsTracker.setPhoneCallReceiver(CallTrackingReceiver())
     callsTracker.startCallTrackingReceiver(this)
@@ -99,7 +99,7 @@ Create an instance of CallTracker, set the PhoneCallReceiver you created in step
 ### Optionally, you can also use the built-in background service by calling:
 
 
-```
+```kotlin
     callsTracker.startCallTrackingService(this)
 ```
 ### Step 5: Stop Call Tracking Receiver
@@ -107,7 +107,7 @@ To stop the call tracking receiver, call the following method:
 
 
 
-```
+```kotlin
     callsTracker.stopCallTrackingReceiver(this)
 ```
 
